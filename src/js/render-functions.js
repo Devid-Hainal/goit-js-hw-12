@@ -1,13 +1,14 @@
 import SimpleLightbox from 'simplelightbox';
-import SimpleLightbox from 'simplelightbox/dist/simple-lightbox.esm';
+import 'simplelightbox/dist/simple-lightbox.min.css';
 
 export const refs = {
   container: document.querySelector('.section-js'),
-  formElement: document.querySelector('.section-js .form'),
-  inputElement: document.querySelector('.section-js input[search-text]'),
-  buttonElement: document.querySelector('.section-js button'),
-  galleryListElement: document.querySelector('.section-js .gallery'),
-  loaderElement: document.querySelector('.section-js .loader'),
+  formElement: document.querySelector('.form'),
+  inputElement: document.querySelector('.inpu[s]'),
+  buttonElement: document.querySelector('.button'),
+  galleryListElement: document.querySelector('.gallery'),
+  loaderElement: document.querySelector('.loader'),
+  loaderButtonElement: document.querySelector('.loader-button-js'),
 };
 
 const {
@@ -17,9 +18,10 @@ const {
   buttonElement,
   galleryListElement,
   loaderElement,
+  loaderButtonElement,
 } = refs;
 
-let lightBox = new SimpleLightbox('gallery a');
+let lightBox = new SimpleLightbox('.gallery a');
 
 export async function createGallery(images) {
   const markupCreation = images
@@ -49,33 +51,33 @@ export async function createGallery(images) {
     .join('');
 
   galleryListElement.insertAdjacentHTML('beforeend', markupCreation);
-  lightBox.refresh()
+  lightBox.refresh();
 }
 
-export async function clearGallery() {
-  galleryListElement.innerHTML('');
+export function clearGallery() {
+  galleryListElement.innerHTML = '';
 }
 
-export async function showLoader() {
-  if (loader) {
-    loader.classList.remove('is-hidden');
+export function showLoader() {
+  if (loaderElement) {
+    loaderElement.classList.remove('is-hidden');
   }
 }
 
-export async function hideLoader() {
-  if (loader) {
-    loader.classList.add('is-hidden');
+export function hideLoader() {
+  if (loaderElement) {
+    loaderElement.classList.add('is-hidden');
   }
 }
 
-export async function showLoadMoreButton() {
-  if (loadMoreBtn) {
-    loadMoreBtn.classList.remove('is-hidden');
+export function showLoadMoreButton() {
+  if (loaderButtonElement) {
+    loaderButtonElement.classList.remove('is-hidden');
   }
 }
 
-export async function hideLoadMoreButton() {
-  if (loadMoreBtn) {
-    loadMoreBtn.classList.add('is-hidden');
+export function hideLoadMoreButton() {
+  if (loaderButtonElement) {
+    loaderButtonElement.classList.add('is-hidden');
   }
 }
