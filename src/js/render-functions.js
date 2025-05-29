@@ -1,10 +1,11 @@
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
+export const formElement = document.querySelector('.form');
+
 export const refs = {
   container: document.querySelector('.section-js'),
-  formElement: document.querySelector('.form'),
-  inputElement: document.querySelector('.inpu[s]'),
+  inputElement: formElement.querySelector('input[name="search-text"]'),
   buttonElement: document.querySelector('.button'),
   galleryListElement: document.querySelector('.gallery'),
   loaderElement: document.querySelector('.loader'),
@@ -13,7 +14,6 @@ export const refs = {
 
 const {
   container,
-  formElement,
   inputElement,
   buttonElement,
   galleryListElement,
