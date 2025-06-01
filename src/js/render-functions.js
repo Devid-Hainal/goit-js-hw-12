@@ -40,11 +40,24 @@ export async function createGallery(images) {
           <img class="gallery-img" src="${webformatURL}" alt="${tags}" />
         </a>
         <div class="img-info">
-          <p><b>Likes:</b> ${likes}</p>
-          <p><b>Views:</b> ${views}</p>
-          <p><b>Comments:</b> ${comments}</p>
-          <p><b>Downloads:</b> ${downloads}</p>
-        </div>
+  <div class="info-item">
+    <p class="info-label">Likes</p>
+    <p class="info-value">${likes}</p>
+  </div>
+  <div class="info-item">
+    <p class="info-label">Views</p>
+    <p class="info-value">${views}</p>
+  </div>
+  <div class="info-item">
+    <p class="info-label">Comments</p>
+    <p class="info-value">${comments}</p>
+  </div>
+  <div class="info-item">
+    <p class="info-label">Downloads</p>
+    <p class="info-value">${downloads}</p>
+  </div>
+</div>
+
       </li>`;
       }
     )
